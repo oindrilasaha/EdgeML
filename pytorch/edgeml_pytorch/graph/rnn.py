@@ -7,10 +7,10 @@ import torch.nn as nn
 from torch.autograd import Function
 import numpy as np
 
-# import edgeml_pytorch.utils as utils
+import edgeml_pytorch.utils as utils
 
-# if utils.findCUDA() is not None:
-#     import fastgrnn_cuda
+if utils.findCUDA() is not None:
+    import fastgrnn_cuda
 
 def onnx_exportable_rnn(input, fargs, cell, output):
     class RNNSymbolic(Function):
